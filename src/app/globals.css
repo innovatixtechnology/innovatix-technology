@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #3b82f6;
+  --color-primary-glow: #2563eb;
+  --color-accent: #6366f1;
+  --color-background-light: #f6f6f8;
+  --color-background-dark: #f8fafc;
+  --color-background-card: #ffffff;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Noto Sans", sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 6s ease-in-out 3s infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin 15s linear infinite;
+  --animate-orbit-slow: orbitSlow 18s linear infinite;
+  --animate-orbit-reverse: orbitReverse 24s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes orbitSlow {
+    from { transform: rotateX(64deg) rotateZ(0deg); }
+    to { transform: rotateX(64deg) rotateZ(360deg); }
+  }
+
+  @keyframes orbitReverse {
+    from { transform: rotateX(64deg) rotateZ(360deg); }
+    to { transform: rotateX(64deg) rotateZ(0deg); }
+  }
+}
+
+@layer utilities {
+  .dark .site-shell {
+    background:
+      radial-gradient(circle at 16% 8%, rgba(37, 99, 235, 0.16), transparent 28rem),
+      radial-gradient(circle at 82% 22%, rgba(99, 102, 241, 0.16), transparent 30rem),
+      radial-gradient(circle at 34% 62%, rgba(14, 165, 233, 0.1), transparent 34rem),
+      linear-gradient(180deg, #05070d 0%, #0b1020 38%, #080b13 72%, #05060a 100%);
+  }
+
+  .dark .theme-flow {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .dark .theme-flow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(5, 7, 13, 0) 0%, rgba(37, 99, 235, 0.08) 26%, rgba(99, 102, 241, 0.08) 54%, rgba(5, 6, 10, 0) 100%),
+      radial-gradient(circle at 75% 35%, rgba(59, 130, 246, 0.12), transparent 30rem),
+      radial-gradient(circle at 18% 72%, rgba(14, 165, 233, 0.1), transparent 32rem);
+  }
+
+  .dark .theme-flow > section {
+    background-color: transparent !important;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 16px;
+    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+  }
+
+  .dark .glass-card {
+    background: rgba(26, 29, 45, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(37, 99, 235, 0.35);
+    box-shadow: 0 22px 60px rgba(37, 99, 235, 0.14);
+  }
+
+  .dark .glass-card:hover {
+    background: rgba(43, 75, 238, 0.15);
+    border: 1px solid rgba(96, 165, 250, 0.4);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+  }
+
+  .bg-grid-pattern {
+    background-image: radial-gradient(rgba(37, 99, 235, 0.16) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .dark .bg-grid-pattern {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  }
+
+  .cta-glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+
+  .cta-glow:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.7);
+  }
+
+}
