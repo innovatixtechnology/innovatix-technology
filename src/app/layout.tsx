@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Noto_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import SiteAnimations from "@/components/ui/SiteAnimations";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -42,6 +43,7 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${notoSans.variable} font-display bg-background-dark text-slate-950 antialiased overflow-x-hidden dark:bg-[#0a0c14] dark:text-slate-100`}
       >
         <ThemeProvider>
+          <SiteAnimations />
           <div className="site-shell flex min-h-screen flex-col">{children}</div>
         </ThemeProvider>
       </body>

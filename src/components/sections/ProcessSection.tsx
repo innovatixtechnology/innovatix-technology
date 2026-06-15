@@ -26,7 +26,7 @@ export default function ProcessSection() {
 
     return (
         <section className="relative px-6 py-24 overflow-hidden bg-slate-50 dark:bg-transparent" id="process">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 opacity-80 dark:from-blue-900/18 dark:to-indigo-900/16"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,#f8fbff_0%,#eef5ff_48%,#f8fbff_100%)] opacity-90 dark:bg-[linear-gradient(90deg,rgba(8,11,19,0.2)_0%,rgba(37,99,235,0.10)_48%,rgba(8,11,19,0.18)_100%)]"></div>
             <div className="absolute inset-0 bg-grid-pattern opacity-35 pointer-events-none dark:opacity-10"></div>
 
             <div className="container mx-auto relative z-10">
@@ -72,7 +72,7 @@ export default function ProcessSection() {
                             key={index}
                             className="flex flex-col items-center text-center group relative z-10"
                         >
-                            <div className="w-24 h-24 rounded-full bg-white border-2 border-blue-200 text-blue-600 flex items-center justify-center text-3xl font-bold mb-6 shadow-xl group-hover:scale-110 group-hover:border-blue-400 group-hover:shadow-blue-500/20 transition-all duration-300 backdrop-blur-md dark:bg-slate-800 dark:border-blue-500/30 dark:text-blue-400">
+                            <div className="w-24 h-24 rounded-full bg-white border-2 border-blue-100 text-blue-600 flex items-center justify-center text-3xl font-bold mb-6 shadow-xl shadow-blue-500/8 group-hover:scale-110 group-hover:border-blue-300 group-hover:shadow-blue-500/18 transition-all duration-300 backdrop-blur-md dark:bg-[#101827]/82 dark:border-cyan-300/20 dark:text-cyan-300 dark:shadow-black/20">
                                 <span className="material-symbols-outlined text-4xl">{step.icon}</span>
                             </div>
                             <h4 className="text-xl font-bold mb-2 text-slate-950 dark:text-white">{step.title}</h4>

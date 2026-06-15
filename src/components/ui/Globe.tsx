@@ -76,6 +76,14 @@ export default function Globe() {
   const { theme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const iconsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const blendedIconColors: Record<string, string> = {
+    Java: "#2563eb",
+    React: "#0891b2",
+    "Next.js": "#1e293b",
+    AWS: "#2563eb",
+    Gemini: "#0ea5e9",
+    OpenAI: "#1e293b",
+  };
 
   useEffect(() => {
     let phi = 0;
@@ -105,7 +113,7 @@ export default function Globe() {
       mapSamples: 42000,
       mapBrightness: isDark ? 32 : 4.1,
       baseColor: isDark ? [0.024, 0.03, 0.07] : [0.8, 0.84, 1],
-      markerColor: isDark ? [0.38, 0.78, 1] : [1, 0.36, 0.42],
+      markerColor: isDark ? [0.38, 0.78, 1] : [0.15, 0.39, 0.92],
       glowColor: isDark ? [0.01, 0.018, 0.04] : [0.98, 0.98, 1],
       markers: [
         { location: [37.7595, -122.4367], size: 0.08 },
@@ -159,14 +167,14 @@ export default function Globe() {
   return (
     <div className="w-full flex items-center justify-center px-4 py-3 lg:p-0">
       <div className="relative w-full max-w-[390px] md:max-w-[450px] lg:max-w-[520px] xl:max-w-[560px] aspect-square mx-auto">
-        <div className="absolute -inset-[8%] bg-[radial-gradient(circle_at_48%_42%,rgba(129,140,248,0.20),rgba(236,72,153,0.12)_36%,rgba(34,211,238,0.08)_52%,transparent_70%)] blur-3xl dark:bg-[radial-gradient(circle_at_52%_48%,rgba(37,99,235,0.13),rgba(15,23,42,0.18)_44%,transparent_72%)]"></div>
+        <div className="absolute -inset-[8%] bg-[radial-gradient(circle_at_48%_42%,rgba(59,130,246,0.18),rgba(14,165,233,0.10)_42%,transparent_70%)] blur-3xl dark:bg-[radial-gradient(circle_at_52%_48%,rgba(37,99,235,0.13),rgba(15,23,42,0.18)_44%,transparent_72%)]"></div>
         <div className="absolute inset-[2%] bg-[radial-gradient(circle,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0.06)_48%,transparent_68%)] blur-2xl dark:bg-[radial-gradient(circle,rgba(30,41,59,0.12)_0%,rgba(15,23,42,0.06)_46%,transparent_68%)]"></div>
-        <div className="absolute left-[18%] top-[18%] h-20 w-20 rounded-full bg-rose-200/40 blur-2xl dark:bg-blue-400/10"></div>
-        <div className="absolute right-[16%] bottom-[18%] h-24 w-24 rounded-full bg-cyan-200/35 blur-2xl dark:bg-indigo-400/10"></div>
-        <div className="absolute left-[13%] top-[23%] z-30 hidden rounded-full border border-indigo-100 bg-white/85 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-indigo-700 shadow-lg shadow-indigo-200/60 backdrop-blur-md sm:block dark:hidden">
+        <div className="absolute left-[18%] top-[18%] h-20 w-20 rounded-full bg-blue-200/32 blur-2xl dark:bg-blue-400/10"></div>
+        <div className="absolute right-[16%] bottom-[18%] h-24 w-24 rounded-full bg-cyan-200/32 blur-2xl dark:bg-cyan-400/10"></div>
+        <div className="absolute left-[13%] top-[23%] z-30 hidden rounded-full border border-blue-100 bg-white/85 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-blue-700 shadow-lg shadow-blue-200/50 backdrop-blur-md sm:block dark:hidden">
           AI ready
         </div>
-        <div className="absolute bottom-[15%] right-[8%] z-30 hidden rounded-full border border-fuchsia-100 bg-white/85 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-fuchsia-700 shadow-lg shadow-fuchsia-200/60 backdrop-blur-md sm:block dark:hidden">
+        <div className="absolute bottom-[15%] right-[8%] z-30 hidden rounded-full border border-cyan-100 bg-white/85 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-cyan-700 shadow-lg shadow-cyan-200/50 backdrop-blur-md sm:block dark:hidden">
           Global delivery
         </div>
         <canvas
@@ -201,12 +209,12 @@ export default function Globe() {
           >
             <div
               title={name}
-              className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-2xl bg-white/90 backdrop-blur-xl border border-white shadow-xl shadow-indigo-200/50 ring-1 ring-fuchsia-100/80 dark:border-white/10 dark:bg-slate-950/45 dark:shadow-black/40 dark:ring-white/5"
+              className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-2xl bg-white/90 backdrop-blur-xl border border-white shadow-xl shadow-blue-200/45 ring-1 ring-blue-100/80 dark:border-white/10 dark:bg-slate-950/45 dark:shadow-black/40 dark:ring-white/5"
             >
               <Icon
                 className="h-7 w-7 sm:h-8 sm:w-8 drop-shadow-[0_0_8px_rgba(99,102,241,0.28)]"
                 style={{
-                  color: theme === "dark" && (name === "Next.js" || name === "OpenAI") ? "#ffffff" : color,
+                  color: theme === "dark" && (name === "Next.js" || name === "OpenAI") ? "#ffffff" : blendedIconColors[name] ?? color,
                 }}
                 aria-label={name}
               />

@@ -79,7 +79,7 @@ export default function PortfolioSection() {
         <section className="relative px-6 py-20 bg-white overflow-hidden dark:bg-transparent" id="work">
             <div className="absolute inset-0 bg-white dark:bg-transparent"></div>
             <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none dark:opacity-10"></div>
-            <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-indigo-300/20 rounded-full blur-[90px] pointer-events-none -translate-x-1/4 -translate-y-1/4"></div>
+            <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-300/18 rounded-full blur-[90px] pointer-events-none -translate-x-1/4 -translate-y-1/4 dark:bg-cyan-500/8"></div>
 
             <div className="container mx-auto relative z-10">
                 <div className="flex justify-between items-end mb-12">

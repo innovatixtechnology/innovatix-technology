@@ -20,23 +20,20 @@ export default function Header() {
                         width={392}
                         height={120}
                         priority
-                        className="h-auto w-full drop-shadow-[0_8px_18px_rgba(37,99,235,0.16)] dark:drop-shadow-[0_0_16px_rgba(59,130,246,0.32)]"
+                        className="h-auto w-full drop-shadow-[0_8px_18px_rgba(37,99,235,0.16)] dark:brightness-0 dark:invert dark:drop-shadow-[0_0_18px_rgba(59,130,246,0.42)]"
                     />
                 </Link>
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
-                <Link className="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors dark:text-slate-300 dark:hover:text-white" href="/#services">
+                <Link className="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors dark:text-slate-300 dark:hover:text-white" href="/services">
                     Services
                 </Link>
                 <Link className="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors dark:text-slate-300 dark:hover:text-white" href="/projects">
                     Work
                 </Link>
-                <Link className="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors dark:text-slate-300 dark:hover:text-white" href="/#process">
-                    Process
-                </Link>
-                <Link className="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors dark:text-slate-300 dark:hover:text-white" href="/#about">
+                <Link className="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors dark:text-slate-300 dark:hover:text-white" href="/about">
                     About Us
                 </Link>
             </nav>
@@ -65,10 +62,9 @@ export default function Header() {
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
                 <div className="absolute top-[73px] left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 lg:hidden flex flex-col p-6 gap-6 shadow-xl dark:border-white/10 dark:bg-[#0a0c14]/95">
-                    <Link href="/#services" className="text-base font-medium text-slate-700 dark:text-slate-200" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
+                    <Link href="/services" className="text-base font-medium text-slate-700 dark:text-slate-200" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
                     <Link href="/projects" className="text-base font-medium text-slate-700 dark:text-slate-200" onClick={() => setIsMobileMenuOpen(false)}>Work</Link>
-                    <Link href="/#process" className="text-base font-medium text-slate-700 dark:text-slate-200" onClick={() => setIsMobileMenuOpen(false)}>Process</Link>
-                    <Link href="/#about" className="text-base font-medium text-slate-700 dark:text-slate-200" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+                    <Link href="/about" className="text-base font-medium text-slate-700 dark:text-slate-200" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
                     <Link href="/contact" className="h-12 w-full mt-2 flex items-center justify-center rounded-lg bg-primary text-sm font-bold text-white shadow-lg cta-glow">
                         Get Consultation
                     </Link>

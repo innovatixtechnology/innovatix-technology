@@ -13,9 +13,9 @@ export default function HeroSection() {
     const contentOpacity = useTransform(scrollY, [0, 400], [1, 0]);
 
     return (
-        <section className="relative px-6 py-14 md:px-10 md:py-16 lg:px-20 lg:py-16 overflow-hidden bg-background-dark dark:bg-[#0a0c14]">
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,#ffffff_0%,#f8fbff_36%,#f2f4ff_68%,#fff4f7_100%)] pointer-events-none dark:bg-[linear-gradient(135deg,#0a0c14_0%,#10172a_46%,#020617_100%)]"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_77%_43%,rgba(124,58,237,0.20),transparent_33%),radial-gradient(circle_at_86%_32%,rgba(244,114,182,0.16),transparent_28%),radial-gradient(circle_at_18%_24%,rgba(45,212,191,0.10),transparent_24%)] pointer-events-none dark:bg-[radial-gradient(circle_at_76%_42%,rgba(59,130,246,0.22),transparent_34%),radial-gradient(circle_at_86%_32%,rgba(99,102,241,0.20),transparent_30%)]"></div>
+        <section className="relative px-6 py-14 md:px-10 md:py-16 lg:px-20 lg:py-16 overflow-hidden bg-slate-50 dark:bg-[#0a0c14]">
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,#ffffff_0%,#f8fbff_42%,#eef5ff_100%)] pointer-events-none dark:bg-[linear-gradient(135deg,#05070d_0%,#0b1020_48%,#070a12_100%)]"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_42%,rgba(59,130,246,0.16),transparent_34%),radial-gradient(circle_at_88%_28%,rgba(14,165,233,0.12),transparent_28%),radial-gradient(circle_at_16%_22%,rgba(37,99,235,0.08),transparent_26%)] pointer-events-none dark:bg-[radial-gradient(circle_at_76%_42%,rgba(59,130,246,0.20),transparent_34%),radial-gradient(circle_at_86%_32%,rgba(14,165,233,0.11),transparent_30%)]"></div>
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-white/70 pointer-events-none dark:to-[#0a0c14]"></div>
 
             <motion.div
@@ -24,7 +24,7 @@ export default function HeroSection() {
             ></motion.div>
 
             <div className="absolute left-0 top-24 h-72 w-px bg-gradient-to-b from-transparent via-cyan-300/70 to-transparent"></div>
-            <div className="absolute right-0 top-24 h-72 w-px bg-gradient-to-b from-transparent via-fuchsia-300/45 to-transparent"></div>
+            <div className="absolute right-0 top-24 h-72 w-px bg-gradient-to-b from-transparent via-blue-300/45 to-transparent"></div>
 
             <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-center relative z-10">
                 <motion.div
@@ -35,10 +35,10 @@ export default function HeroSection() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 w-fit backdrop-blur-sm shadow-sm dark:border-emerald-400/20 dark:bg-emerald-400/10"
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 w-fit backdrop-blur-sm shadow-sm dark:border-cyan-300/20 dark:bg-cyan-300/10"
                     >
-                        <span className="size-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-300">
+                        <span className="size-2 rounded-full bg-blue-500 animate-pulse dark:bg-cyan-300"></span>
+                        <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-cyan-300">
                             Available for new projects
                         </span>
                     </motion.div>
@@ -50,7 +50,7 @@ export default function HeroSection() {
                         className="text-4xl md:text-5xl lg:text-[54px] xl:text-[62px] font-bold leading-[1.08] tracking-tight text-slate-950 dark:text-white"
                     >
                         Building Intelligent{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-indigo-600 to-fuchsia-600 dark:from-blue-400 dark:to-indigo-400">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 dark:from-blue-300 dark:via-cyan-300 dark:to-blue-400">
                             Digital Solutions
                         </span>{" "}
                         for Modern Businesses

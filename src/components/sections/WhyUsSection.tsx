@@ -27,9 +27,9 @@ export default function WhyUsSection() {
     };
 
     return (
-        <section ref={containerRef} className="relative px-6 py-20 bg-white border-t border-slate-200 overflow-hidden dark:border-white/5 dark:bg-transparent">
-            <div className="absolute inset-0 bg-white pointer-events-none dark:bg-transparent"></div>
-            <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-blue-300/20 rounded-full blur-[100px] pointer-events-none translate-x-1/4 dark:bg-blue-500/10"></div>
+        <section ref={containerRef} className="relative px-6 py-20 bg-white border-t border-slate-200 overflow-hidden dark:border-white/5 dark:bg-[#080b13]">
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] pointer-events-none dark:bg-[linear-gradient(180deg,#070a12_0%,#0b1020_55%,#080b13_100%)]"></div>
+            <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-cyan-300/12 rounded-full blur-[100px] pointer-events-none translate-x-1/4 dark:bg-cyan-500/8"></div>
 
             <div className="container mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -40,7 +40,7 @@ export default function WhyUsSection() {
                         className="flex flex-col gap-6"
                     >
                         <div>
-                            <motion.h2 variants={textVariants} className="text-sm font-bold text-primary-glow tracking-widest uppercase mb-3">Why Us</motion.h2>
+                            <motion.h2 variants={textVariants} className="text-sm font-bold text-blue-600 tracking-widest uppercase mb-3 dark:text-cyan-300">Why Us</motion.h2>
                             <motion.h3 variants={textVariants} className="text-3xl md:text-4xl font-bold leading-tight mb-6 text-slate-950 dark:text-white">Partners, Not Just Vendors</motion.h3>
                             <motion.p variants={textVariants} className="text-slate-600 text-lg mb-8 dark:text-slate-400">
                                 We bridge the gap between business goals and technical execution. Our holistic approach ensures your digital products succeed in the real world.
@@ -49,7 +49,7 @@ export default function WhyUsSection() {
 
                         <motion.div variants={listContainerVariants} className="space-y-6">
                             <motion.div variants={textVariants} className="flex gap-4">
-                                <div className="mt-1 min-w-6 text-primary-glow">
+                                <div className="mt-1 min-w-6 text-blue-600 dark:text-cyan-300">
                                     <span className="material-symbols-outlined shrink-0">check_circle</span>
                                 </div>
                                 <div>
@@ -58,7 +58,7 @@ export default function WhyUsSection() {
                                 </div>
                             </motion.div>
                             <motion.div variants={textVariants} className="flex gap-4">
-                                <div className="mt-1 min-w-6 text-primary-glow">
+                                <div className="mt-1 min-w-6 text-blue-600 dark:text-cyan-300">
                                     <span className="material-symbols-outlined shrink-0">psychology</span>
                                 </div>
                                 <div>
@@ -67,7 +67,7 @@ export default function WhyUsSection() {
                                 </div>
                             </motion.div>
                             <motion.div variants={textVariants} className="flex gap-4">
-                                <div className="mt-1 min-w-6 text-primary-glow">
+                                <div className="mt-1 min-w-6 text-blue-600 dark:text-cyan-300">
                                     <span className="material-symbols-outlined shrink-0">trending_up</span>
                                 </div>
                                 <div>
@@ -83,15 +83,14 @@ export default function WhyUsSection() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="relative rounded-2xl overflow-hidden aspect-video shadow-2xl ring-1 ring-slate-200 group"
+                        className="relative rounded-2xl overflow-hidden aspect-video shadow-2xl shadow-blue-500/10 ring-1 ring-slate-200 group dark:shadow-black/30 dark:ring-white/10"
                     >
                         <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay z-10 group-hover:bg-blue-500/0 transition-all duration-700"></div>
-                        {/* Parallax Image Mapping */}
                         <motion.img
                             style={{ y: imgY, scale: 1.06 }}
                             className="object-cover object-center w-full h-[108%] -mt-[4%] opacity-95 transition-transform duration-700 group-hover:opacity-100 group-hover:scale-[1.08]"
-                            alt="Technology partners planning an AI-enabled digital product around a laptop"
-                            src="/why-us-partnership.webp"
+                            alt="Digital strategy workspace with product planning, brand systems, and analytics"
+                            src="/why-us-digital-strategy.png"
                         />
                     </motion.div>
                 </div>
