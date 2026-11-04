@@ -25,7 +25,7 @@ export default function Footer() {
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-paper/40">Explore</p>
             <ul className="mt-5 space-y-3 text-sm">
-              {nav.flatMap((n) => n.children ?? [n]).map((n) => (
+              {nav.flatMap<{ label: string; href: string }>((n) => n.children ?? [n]).map((n) => (
                 <li key={n.label}>
                   <Link href={n.href} className="text-paper/75 transition-colors hover:text-paper">
                     {n.label}
