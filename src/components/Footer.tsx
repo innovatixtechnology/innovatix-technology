@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <div className="grid gap-12 border-t border-paper/10 py-16 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <img src="/innovatix-logo.png" alt="Innovatix Technology" width={392} height={147} className="h-12 w-auto brightness-0 invert" />
+            <img src="/innovatix-logo.png" alt="Innovatix Technology" width={1227} height={422} className="h-12 w-auto brightness-0 invert" />
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-paper/55">
               Websites, software, AI workflows, brand systems and growth campaigns for businesses that want practical digital progress.
             </p>

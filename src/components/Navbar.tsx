@@ -73,8 +73,8 @@ export default function Navbar() {
             <img
               src="/innovatix-logo.png"
               alt="Innovatix Technology"
-              width={392}
-              height={147}
+              width={1227}
+              height={422}
               className={`w-auto transition-[height] duration-500 ${scrolled ? 'h-11' : 'h-12 md:h-14'} ${dark ? 'brightness-0 invert' : ''}`}
             />
           </Link>
