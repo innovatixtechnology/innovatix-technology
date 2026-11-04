@@ -18,10 +18,10 @@ export default function Home() {
     <>
       <Intro />
       <ChaosHero delay={delay} />
-      <LogoRibbon />
       <Services />
       <FeaturedWork />
       <About />
+      <LogoRibbon />
       <Contact />
     </>
   )

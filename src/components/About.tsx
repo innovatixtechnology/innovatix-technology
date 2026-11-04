@@ -29,7 +29,7 @@ export default function About() {
 
   return (
     <section id="about" aria-label="About Innovatix" className="relative bg-paper">
-      <div className={`mx-auto max-w-[1400px] px-6 pb-28 md:px-10 md:pb-36 pt-28 md:pt-36`}>
+      <div className={`mx-auto max-w-[1400px] px-6 pb-16 pt-28 md:px-10 md:pb-20 md:pt-36`}>
         <Eyebrow>About Innovatix</Eyebrow>
         <p
           ref={ref}

@@ -29,7 +29,7 @@ function Row({ hidden = false }: { hidden?: boolean }) {
 /** Client logos drifting left to right, with the partnership credit in the corner. */
 export default function LogoRibbon() {
   return (
-    <section aria-label={`Brands we have worked with, in partnership with ${PARTNER}`} className="marquee-pause relative overflow-hidden border-y border-ink/10 bg-paper pb-12 pt-10 md:pb-14 md:pt-12">
+    <section aria-label={`Brands we have worked with, in partnership with ${PARTNER}`} className="marquee-pause relative mb-16 overflow-hidden border-y border-ink/10 bg-paper pb-12 pt-10 md:mb-20 md:pb-14 md:pt-12">
       <div className="[mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
         <div className="marquee-right flex w-max bg-paper">
           <Row />
