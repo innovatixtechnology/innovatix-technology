@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/* Tokens from design-system/innovatix-technology/MASTER.md */
+@theme {
+  --color-paper: #f6f5f1;
+  --color-paper-2: #eeece5;
+  --color-ink: #0b1a3a;
+  --color-ink-soft: #545e73;
+  --color-brand: #13318c;
+  --color-sky: #2f8be6;
+
+  --font-display: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-hand: var(--font-caveat), "Bradley Hand", cursive;
+
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Intro curtain only plays on the first homepage visit (see lib/intro.ts). */
+[data-intro-seen] .intro-curtain {
+  display: none;
+}
+
+html {
+  background: var(--color-paper);
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-ink antialiased;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-sky);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.text-brand-gradient {
+  background: linear-gradient(95deg, var(--color-brand) 10%, var(--color-sky) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Chaos-to-clarity desk ---- */
+
+.desk {
+  background-color: var(--color-paper);
+  background-image:
+    radial-gradient(120% 90% at 50% 40%, transparent 55%, rgb(11 26 58 / 0.06)),
+    linear-gradient(rgb(11 26 58 / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(11 26 58 / 0.035) 1px, transparent 1px);
+  background-size: auto, 40px 40px, 40px 40px;
+}
+
+.paper {
+  background-color: #fcfbf7;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(160deg, #fffefb, #f6f3ea);
+}
+
+.shadow-real {
+  box-shadow:
+    0 1px 1px rgb(11 26 58 / 0.08),
+    0 3px 6px rgb(11 26 58 / 0.06),
+    0 14px 28px -10px rgb(11 26 58 / 0.25),
+    0 34px 50px -26px rgb(11 26 58 / 0.3);
+  transition: box-shadow 0.4s var(--ease-expo);
+}
+
+.group:hover .shadow-real {
+  box-shadow:
+    0 1px 1px rgb(11 26 58 / 0.08),
+    0 6px 12px rgb(11 26 58 / 0.08),
+    0 26px 44px -12px rgb(11 26 58 / 0.3),
+    0 54px 70px -30px rgb(11 26 58 / 0.32);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Logo ribbon: two copies of the row slide right by one copy's width, then loop. */
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+.marquee-right {
+  animation: marquee-right 90s linear infinite;
+}
+.marquee-pause:hover .marquee-right {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-right { animation: none; }
+}
