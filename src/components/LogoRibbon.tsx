@@ -1,4 +1,5 @@
 import { clientLogos, PARTNER } from '../lib/clients'
+import { Eyebrow } from './ui/Reveal'
 
 /** Same visual weight for wide and square logos: height shrinks as the logo gets wider. */
 const displayHeight = (w: number, h: number) => Math.round(Math.min(68, Math.max(34, Math.sqrt(4200 / (w / h)))))
@@ -29,7 +30,10 @@ function Row({ hidden = false }: { hidden?: boolean }) {
 /** Client logos drifting left to right, with the partnership credit in the corner. */
 export default function LogoRibbon() {
   return (
-    <section aria-label={`Brands we have worked with, in partnership with ${PARTNER}`} className="marquee-pause relative mb-16 overflow-hidden border-y border-ink/10 bg-paper pb-12 pt-10 md:mb-20 md:pb-14 md:pt-12">
+    <section aria-label={`Our clients, in partnership with ${PARTNER}`} className="marquee-pause relative mb-16 overflow-hidden border-y border-ink/10 bg-paper pb-12 pt-10 md:mb-20 md:pb-14 md:pt-12">
+      <div className="mx-auto mb-10 max-w-[1400px] px-6 md:mb-12 md:px-10">
+        <Eyebrow>Our clients</Eyebrow>
+      </div>
       <div className="[mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
         <div className="marquee-right flex w-max bg-paper">
           <Row />

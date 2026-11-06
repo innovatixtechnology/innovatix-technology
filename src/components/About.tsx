@@ -53,7 +53,7 @@ export default function About() {
         </div>
 
           <FadeUp delay={0.2} className="mt-16">
-            <Link href="/team" className="group inline-flex items-center gap-3 border-b border-ink/25 pb-2 text-[15px] font-medium transition-colors hover:border-ink">
+            <Link href="/about#team" className="group inline-flex items-center gap-3 border-b border-ink/25 pb-2 text-[15px] font-medium transition-colors hover:border-ink">
               Meet the team
               <ArrowRight aria-hidden className="h-4 w-4 transition-transform duration-500 ease-expo group-hover:translate-x-1" />
             </Link>

@@ -10,6 +10,9 @@ import { ease } from '../lib/motion'
 import { Accent, Eyebrow, MaskHeading } from './ui/Reveal'
 import DarkSection from './ui/DarkSection'
 
+/** Websites shown on the homepage; the full list stays on the portfolio page. */
+const homeProjects = featuredProjects.filter((p) => p.name !== 'HeyBuds')
+
 function BrowserShot({ project, className = '' }: { project: Project; className?: string }) {
   return (
     <div className={`overflow-hidden rounded-[10px] bg-white shadow-[0_30px_70px_-30px_rgba(0,0,0,0.7)] ring-1 ring-white/10 ${className}`}>
@@ -98,7 +101,7 @@ function HorizontalGallery() {
               Websites, stores and platforms we have designed and built. Scroll to browse, click to visit.
             </p>
           </div>
-          {featuredProjects.map((p, i) => (
+          {homeProjects.map((p, i) => (
             <div key={p.name} className="w-[46vw] max-w-[760px] shrink-0">
               <ProjectCard project={p} index={i} />
             </div>
@@ -137,7 +140,7 @@ function StackedGallery() {
       <Eyebrow tone="dark">Selected work</Eyebrow>
       <MaskHeading className="mt-6 text-[clamp(2.4rem,7vw,4rem)] text-paper" lines={['Projects built', <>for <Accent>real</Accent> brands.</>]} />
       <div className="mt-14 space-y-16">
-        {featuredProjects.map((p, i) => (
+        {homeProjects.map((p, i) => (
           <motion.div
             key={p.name}
             initial={{ opacity: 0, y: 40 }}

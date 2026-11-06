@@ -19,7 +19,7 @@ export const nav: NavLink[] = [
     ],
   },
   { label: 'Services', href: '/services' },
-  { label: 'Team', href: '/team' },
+  { label: 'About us', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ]
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'motion/react'
-import { founders, principles, type Founder } from '../lib/content'
+import { founders, principles, stats, type Founder } from '../lib/content'
 import { ease } from '../lib/motion'
 import { Accent, Eyebrow, FadeUp, MaskHeading } from './ui/Reveal'
 
@@ -66,22 +66,53 @@ function FounderRow({ founder, index }: { founder: Founder; index: number }) {
   )
 }
 
+const COMPANY = [
+  'Innovatix Technology is a marketing and technology company. We bring brand, design, websites, software and AI under one roof, so a business can grow without juggling three different agencies.',
+  'From fragrance and food brands to manufacturers and AI startups, we have launched more than 50 projects across 8 industries. Each one is built to look good, work fast and bring in real customers.',
+]
+
 const TEAM_INTRO =
   'Most businesses end up with one agency for the brand, another for the website and a third for the software. We started Innovatix so they would not have to. Between the three of us we cover business, marketing and technology, and we stay close to every project from the first call to launch day.'
 
-/** The team page: intro, the three co-founders, then how we work. */
+/** The About us page: the company, the three co-founders, then how we work. */
 export default function Team() {
   return (
-    <section id="team" aria-labelledby="team-title" className="relative bg-paper">
+    <section aria-labelledby="about-title" className="relative bg-paper">
       <div className="mx-auto max-w-[1200px] px-6 pb-28 pt-40 md:px-10 md:pb-36 md:pt-48">
         <div className="text-center">
           <div className="flex justify-center">
-            <Eyebrow>Team</Eyebrow>
+            <Eyebrow>About us</Eyebrow>
           </div>
           <MaskHeading
             as="h1"
-            id="team-title"
+            id="about-title"
             className="mx-auto mt-6 text-[clamp(2.6rem,6vw,6rem)]"
+            lines={['Your brand,', <Accent key="l2">our obsession.</Accent>]}
+          />
+          <div className="mx-auto mt-8 max-w-2xl space-y-5 text-[17px] leading-relaxed text-ink-soft md:text-lg">
+            {COMPANY.map((line, i) => (
+              <FadeUp key={i} delay={0.2 + i * 0.1}>
+                <p>{line}</p>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+
+        <div className="mx-auto mt-16 grid max-w-3xl grid-cols-3 gap-4 border-t border-ink/10 pt-10 text-center md:mt-20">
+          {stats.map((s, i) => (
+            <FadeUp key={s.label} delay={i * 0.1}>
+              <div className="font-display text-[clamp(2rem,4.5vw,3.6rem)] font-medium leading-none tracking-[-0.05em]">{s.value}</div>
+              <div className="mt-3 text-[11px] font-medium uppercase tracking-[0.18em] text-ink-soft md:text-xs">{s.label}</div>
+            </FadeUp>
+          ))}
+        </div>
+
+        <div id="team" className="scroll-mt-28 pt-28 text-center md:pt-36">
+          <div className="flex justify-center">
+            <Eyebrow>Our team</Eyebrow>
+          </div>
+          <MaskHeading
+            className="mx-auto mt-6 text-[clamp(2.2rem,4.6vw,4.4rem)]"
             lines={['The people', <>behind the <Accent>work.</Accent></>]}
           />
           <FadeUp delay={0.2} className="mx-auto mt-8 max-w-2xl text-[17px] leading-relaxed text-ink-soft md:text-lg">

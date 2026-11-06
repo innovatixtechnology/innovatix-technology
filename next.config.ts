@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: ['192.168.1.235'],
   // Pages from the 1.0 site, so old links and search results still land somewhere useful.
   redirects: async () => [
-    { source: '/about', destination: '/team', permanent: true },
+    { source: '/team', destination: '/about', permanent: true },
     { source: '/projects', destination: '/work/portfolio', permanent: true },
   ],
 }
